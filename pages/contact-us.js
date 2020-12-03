@@ -5,19 +5,20 @@ import styles from '../styles/alert.module.css'
 import cn from 'classnames'
 
 
-export default function AboutUs() {
+export default function ContactUs() {
     return (
         <Layout>
             <Head>
                 <title>About Us</title>
             </Head>
-        <div>
-        <h1>AboutUS</h1>
-        <h2>
-            <Link href="/">
-                <a>Back to home</a>
-            </Link>
-        </h2>
-        </div>
+
+            <div>
+                <h1>Contact Us</h1>
+                <h2>
+                    <Link href="/">
+                        <a>Back to home</a>
+                    </Link>
+                </h2>
+            </div>
         </Layout>)
 }

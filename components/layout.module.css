@@ -1,13 +1,37 @@
 .container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    min-height: 100vh;
+    /*background-color: #31428a;*/
+
+    background-color: #fff;
 }
+.colorLearnBlue{
+    color:#31428a;
+}
+.learnGray{
+    background-color:  #e4e8eb;
+}
+.learnBlue{
+    background-color: #31428a;
+}
+.upperHeader{
+    height: 3rem;
+}
+.lowerHeader{
+    /*margin-top:3rem;*/
+}
+.upperSpace{
+        height: 8rem;
+}
+/*
+#e4e8eb
+#31428a
+*/
 
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .headerImage {
@@ -16,10 +40,9 @@
 }
 
 .headerHomeImage {
-    width: 8rem;
-    height: 8rem;
+    /*width: 8rem;*/
+    height: 4rem;
 }
-
 .backToHome {
     margin: 3rem 0 0;
 }

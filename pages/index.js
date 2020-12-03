@@ -40,11 +40,9 @@ export default function Home({ allPostsData }) {
                               <Date dateString={date} />
                           </small>
                       </li>
-
                   ))}
               </ul>
           </section>
-
       </Layout>
   )
 }
