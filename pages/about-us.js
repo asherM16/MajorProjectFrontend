@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Head from "next/head"
 import Layout from '../components/layout'
-import styles from '../styles/alert.module.css'
-import cn from 'classnames'
 
 
 export default function AboutUs() {

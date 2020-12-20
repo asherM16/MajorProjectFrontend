@@ -11,7 +11,7 @@ const name = 'Asher Toufeeq'
 export const siteTitle = 'Next.js Sample Website'
 
 export default function Layout({children, home}) {
-    const [menuVisible,setMenuVisible] = useState(false)
+    const [menuVisible, setMenuVisible] = useState(false)
     return (
         <div className={styles.container}>
             <Parallax scrolling={true}>
@@ -57,31 +57,34 @@ export default function Layout({children, home}) {
                                         </a>))}
                                 </div>
                             </div>
-                            <div className={`${styles.learnGray} flex flex-row justify-between items-start lg:items-center xl:items-center 2xl:items-center  p-2`}>
+                            <div
+                                className={`${styles.learnGray} flex flex-row justify-between items-start lg:items-center xl:items-center 2xl:items-center p-1`}>
                                 <img
                                     src="/images/learnizoLogo.png"
                                     className={`${styles.headerHomeImage} mx-3`}
                                     alt={name}
                                 />
                                 <div className={`flex flex-row items-center justify-center`}>
-                                   <div className={'hidden lg:flex flex-row items-center justify-center'}>
-                                    {headerLinks.map(({link, title}) => (
-                                        <div className={`m-2 flex flex-row items-center`} key={link}>
-                                            <Link href={`${link}`}>
-                                                <a className={`font-medium text-gray-700 
+                                    <div className={'hidden lg:flex flex-row items-center justify-center'}>
+                                        {headerLinks.map(({link, title}) => (
+                                            <div className={`m-2 flex flex-row items-center`} key={link}>
+                                                <Link href={`${link}`}>
+                                                    <a className={`font-medium text-gray-700 
                                                 colorBlue transition duration-500 
                                                 ease-in-out transform 
                                                 hover:scale-110`}>{title}</a>
-                                            </Link>
-                                        </div>
-                                    ))}
-                                   </div>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
                                     <div className={'animate flex lg:hidden xl:hidden 2xl:hidden' +
                                     ' justify-center items-end flex-col'}>
-                                      <div onClick={()=>{setMenuVisible(!menuVisible)}} className={'mx-2'}>
-                                        <Ionicons name={'ios-menu'} size={25}/>
-                                      </div>
-                                        <div className={`${menuVisible?'':'hidden'}`}>
+                                        <div onClick={() => {
+                                            setMenuVisible(!menuVisible)
+                                        }} className={'mx-2'}>
+                                            <Ionicons name={'ios-menu'} size={25}/>
+                                        </div>
+                                        <div className={`${menuVisible ? '' : 'hidden'}`}>
                                             {headerLinks.map(({link, title}) => (
                                                 <div className={`m-2 flex flex-col items-end 
                                                 justify-center`}
@@ -102,18 +105,23 @@ export default function Layout({children, home}) {
                     </ParallaxLayer>
                 </header>
                 <div className={`${styles.upperSpace}`}/>
-                <main>
+                <main className={`${styles.childContainer}`}>
                     {children}
                 </main>
-                {!home && (
-                    <div className={styles.backToHome}>
-                        <Link href="/">
-                            <a>← Back to home</a>
-                        </Link>
+                <br/>
+                <div className={`${styles.learnGray}`}>
+                    <div className={`flex flex-col justify-between items-center p-2 `}>
+                        <img
+                            src="/images/learnizoLogo.png"
+                            className={`${styles.headerHomeImage} mx-3`}
+                            alt={name}
+                        />
+                        <text>
+                            © 2020 Learnizo Coaching Institute, Amroha
+                        </text>
                     </div>
-                )}
+                </div>
             </Parallax>
         </div>
-
     )
 }
