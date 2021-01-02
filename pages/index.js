@@ -4,6 +4,7 @@ import Layout, {siteTitle} from '../components/layout'
 import {getSortedPostsData} from '../lib/posts'
 import CoursesOffered from "../components/home/CoursesOffered";
 import {ContactUsInner} from "../components/contactUsInner";
+import {TestimonialCard} from "../components/testimonialCard";
 
 const images = [{
     alt: 'banner1',
@@ -77,7 +78,7 @@ export default function Home({allPostsData}) {
             </section>
             <section>
                 <br/>
-
+                    <TestimonialCard/>
             </section>
             <br/>
             <div>
