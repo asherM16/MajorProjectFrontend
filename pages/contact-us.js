@@ -8,7 +8,7 @@ export default function ContactUs() {
     return (
         <Layout>
             <Head>
-                <title>Contact Us</title>
+                <title>Learnizo | Contact Us</title>
             </Head>
             <br/>
            <ContactUsInner/>

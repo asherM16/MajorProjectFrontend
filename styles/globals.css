@@ -46,6 +46,24 @@ img {
   background-color: #31428a;
   background-image: url('../public/images/texture.png');
 }
+.card-subject{
+  background-color: #ffffff;
+  background-position: 100px ;
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
+}
+.maths{
+  background-image: url('../public/svgs/maths.svg');
+}
+.science{
+  background-image: url('../public/svgs/science.svg');
+}
+.social-science{
+  background-image: url('../public/svgs/socialScience.svg');
+}
+.english{
+  background-image: url('../public/svgs/communication.svg');
+}
 .google-map{
   margin-top:20px;
   width:100%;

@@ -75,6 +75,10 @@ export default function Home({allPostsData}) {
                 <br/>
                 <CoursesOffered/>
             </section>
+            <section>
+                <br/>
+
+            </section>
             <br/>
             <div>
                 <div className={'flex flex-row justify-center items-center'}>

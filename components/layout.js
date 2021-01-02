@@ -59,11 +59,13 @@ export default function Layout({children, home}) {
                             </div>
                             <div
                                 className={`${styles.learnGray} flex flex-row justify-between items-start lg:items-center xl:items-center 2xl:items-center p-1`}>
-                                <img
+                                <Link href={`/`}>
+                                    <img
                                     src="/images/learnizoLogo.png"
                                     className={`${styles.headerHomeImage} mx-3`}
                                     alt={name}
-                                />
+                                    />
+                                </Link>
                                 <div className={`flex flex-row items-center justify-center`}>
                                     <div className={'hidden lg:flex flex-row items-center justify-center'}>
                                         {headerLinks.map(({link, title}) => (

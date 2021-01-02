@@ -47,7 +47,7 @@ export const ContactUsInner=()=>{
                             </li>
                             <li className={''}>
                                 <Ionicons name={'ios-mail'} size={18} color={'#31428a'}/>
-                                <text className={`${styles.colorLearnBlue}`}>{'  '}learnizo@gmail.com</text>
+                                <text className={`${styles.colorLearnBlue}`}>{'  '}learnizoclass@gmail.com</text>
                             </li>
                         </ul>
                     </div>
