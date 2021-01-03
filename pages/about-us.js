@@ -1,13 +1,12 @@
-import Link from "next/link";
-import Head from "next/head"
+import Link from 'next/link'
+import Head from 'next/head'
 import Layout from '../components/layout'
 
-
-export default function AboutUs() {
-    return (
+export default function AboutUs () {
+  return (
         <Layout>
             <Head>
-                <title>About Us</title>
+                <title>Learnizo | About Us</title>
             </Head>
         <div>
         <h1>AboutUS</h1>

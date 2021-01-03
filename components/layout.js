@@ -1,22 +1,22 @@
-import {useState} from 'react';
+import { useState } from 'react'
 import styles from './layout.module.css'
 import Head from 'next/head'
-import {Ionicons} from 'react-web-vector-icons'
+import TypeProps from 'prop-types'
+import { Ionicons } from 'react-web-vector-icons'
 import Link from 'next/link'
-import {socialMediaDetails} from "../constants/socialMediaDetails";
-import {Parallax, ParallaxLayer} from '@react-spring/parallax'
-import {headerLinks} from "../constants/headerLinks";
+import { socialMediaDetails } from '../constants/socialMediaDetails'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { headerLinks } from '../constants/headerLinks'
 
-const name = 'Asher Toufeeq'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'Leanizo Coaching Institute'
 
-export default function Layout({children, home}) {
-    const [menuVisible, setMenuVisible] = useState(false)
-    return (
+export default function Layout ({ children }) {
+  const [menuVisible, setMenuVisible] = useState(false)
+  return (
         <div className={styles.container}>
             <Parallax scrolling={true}>
                 <Head>
-                    <link rel="icon" href="/favicon.ico"/>
+                    <link rel="icon" href="/svgs/iconnew.svg"/>
                     <meta
                         name="description"
                         content="Learn how to build a personal website using Next.js"
@@ -29,10 +29,11 @@ export default function Layout({children, home}) {
                     />
                     <meta name="og:title" content={siteTitle}/>
                     <meta name="twitter:card" content="summary_large_image"/>
+                    <title>Learnizo Coaching Institute</title>
                 </Head>
                 <header>
                     <ParallaxLayer offset={0} speed={0.5}>
-                        <div className={`shadow-md`}>
+                        <div className={'shadow-md'}>
                             <div
                                 className={`learn-gray flex flex-row items-center justify-around py-2 ${styles.learnBlue} ${styles.upperHeader}`}>
                                 <div
@@ -44,10 +45,12 @@ export default function Layout({children, home}) {
                                 <div>
                                     {socialMediaDetails.map(Item => (
                                         <a
+                                            key={Item.link}
+                                            rel="noreferrer"
                                             href={Item.link}
                                             target={'_blank'}
-                                            className={`mx-2`}
-                                            style={{textDecoration: 'none'}}
+                                            className={'mx-2'}
+                                            style={{ textDecoration: 'none' }}
                                         ><Ionicons
                                             name={Item.icon}
                                             color={Item.color}
@@ -59,17 +62,17 @@ export default function Layout({children, home}) {
                             </div>
                             <div
                                 className={`${styles.learnGray} flex flex-row justify-between items-start lg:items-center xl:items-center 2xl:items-center p-1`}>
-                                <Link href={`/`}>
+                                <Link href={'/'}>
                                     <img
                                     src="/images/learnizoLogo.png"
                                     className={`${styles.headerHomeImage} mx-3`}
-                                    alt={name}
+                                    alt={'Learnizo'}
                                     />
                                 </Link>
-                                <div className={`flex flex-row items-center justify-center`}>
+                                <div className={'flex flex-row items-center justify-center'}>
                                     <div className={'hidden lg:flex flex-row items-center justify-center'}>
-                                        {headerLinks.map(({link, title}) => (
-                                            <div className={`m-2 flex flex-row items-center`} key={link}>
+                                        {headerLinks.map(({ link, title }) => (
+                                            <div className={'m-2 flex flex-row items-center'} key={link}>
                                                 <Link href={`${link}`}>
                                                     <a className={`font-medium text-gray-700 
                                                 colorBlue transition duration-500 
@@ -82,12 +85,12 @@ export default function Layout({children, home}) {
                                     <div className={'animate flex lg:hidden xl:hidden 2xl:hidden' +
                                     ' justify-center items-end flex-col'}>
                                         <div onClick={() => {
-                                            setMenuVisible(!menuVisible)
+                                          setMenuVisible(!menuVisible)
                                         }} className={'mx-2'}>
                                             <Ionicons name={'ios-menu'} size={25}/>
                                         </div>
                                         <div className={`${menuVisible ? '' : 'hidden'}`}>
-                                            {headerLinks.map(({link, title}) => (
+                                            {headerLinks.map(({ link, title }) => (
                                                 <div className={`m-2 flex flex-col items-end 
                                                 justify-center`}
                                                      key={link}>
@@ -112,11 +115,11 @@ export default function Layout({children, home}) {
                 </main>
                 <br/>
                 <div className={`${styles.learnGray}`}>
-                    <div className={`flex flex-col justify-between items-center p-2 `}>
+                    <div className={'flex flex-col justify-between items-center p-2 '}>
                         <img
                             src="/images/learnizoLogo.png"
                             className={`${styles.headerHomeImage} mx-3`}
-                            alt={name}
+                            alt={'Leanizo'}
                         />
                         <text>
                             © 2020 Learnizo Coaching Institute, Amroha
@@ -125,5 +128,8 @@ export default function Layout({children, home}) {
                 </div>
             </Parallax>
         </div>
-    )
+  )
+}
+Layout.propTypes = {
+  children: TypeProps.any
 }

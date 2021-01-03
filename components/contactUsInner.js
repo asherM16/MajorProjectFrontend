@@ -1,18 +1,23 @@
-import {Ionicons} from "react-web-vector-icons";
-import styles from "./layout.module.css";
-import {useState} from "react";
+import { Ionicons } from 'react-web-vector-icons'
+import styles from './layout.module.css'
+import { useState } from 'react'
 
-export const ContactUsInner=()=>{
-    const [contact, setContact] = useState('')
-    return(
+export const ContactUsInner = () => {
+  const [contact, setContact] = useState('')
+  return (
         <div className={'grid md:grid-cols-2 grid-cols-1 gap-4'}>
             <div className={'flex flex-col justify-start items-start p-2 px-4'}>
-                <text className={`text-3xl subpixel-antialiased font-semibold`}>
-                    Contact Us
-                </text>
+                <div className={'flex flex-row'}>
+                    <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
+                        Contact
+                    </text>
+                    <text className={'mx-2 text-3xl subpixel-antialiased font-normal text-gray-500'}>
+                        Us
+                    </text>
+                </div>
                 <br/>
-                <div className={`w-full flex flex-col`}>
-                    <text className={`text-xl subpixel-antialiased font-middle`}>
+                <div className={'w-full flex flex-col'}>
+                    <text className={'text-xl subpixel-antialiased font-middle'}>
                         Mohammad Saleem<br/>
                         Managing Director<br/>
                         Learnizo Coaching Institute<br/>
@@ -21,7 +26,7 @@ export const ContactUsInner=()=>{
                     <br/>
                     <br/>
                     <div>
-                        <text className={`text-gray-700 font-light`}>
+                        <text className={'text-gray-700 font-light'}>
                             Phone Numbers
                         </text>
                         <ul className={'mx-4'}>
@@ -37,7 +42,7 @@ export const ContactUsInner=()=>{
                     </div>
                     <br/>
                     <div>
-                        <text className={`text-gray-700 font-light`}>
+                        <text className={'text-gray-700 font-light'}>
                             Mailing Addresses
                         </text>
                         <ul className={'mx-4'}>
@@ -54,7 +59,7 @@ export const ContactUsInner=()=>{
                 </div>
             </div>
             <div className={'flex flex-col justify-center items-center'}>
-                <text className={`text-xl subpixel-antialiased font-semibold`}>
+                <text className={'text-xl subpixel-antialiased font-semibold'}>
                     Need assistance from us?
                 </text>
                 <br/>
@@ -66,10 +71,11 @@ export const ContactUsInner=()=>{
                     />
                 </form>
                 <br/>
-                <button className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
+                <button
+                    className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
                     Get a Call Back
                 </button>
             </div>
         </div>
-    )
+  )
 }

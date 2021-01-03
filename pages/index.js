@@ -1,70 +1,70 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Layout, {siteTitle} from '../components/layout'
-import {getSortedPostsData} from '../lib/posts'
-import CoursesOffered from "../components/home/CoursesOffered";
-import {ContactUsInner} from "../components/contactUsInner";
-import {TestimonialCard} from "../components/testimonialCard";
+import Layout, { siteTitle } from '../components/layout'
+import { getSortedPostsData } from '../lib/posts'
+import CoursesOffered from '../components/home/CoursesOffered'
+import { ContactUsInner } from '../components/contactUsInner'
+import { Testimonials } from '../components/home/testimonials'
+import styles from '../components/layout.module.css'
 
 const images = [{
-    alt: 'banner1',
-    imagePath: '/images/banner1.jpg',
-    title: 'IX',
-    category: 'Science'
+  alt: 'banner1',
+  imagePath: '/images/banner1.jpg',
+  title: 'IX',
+  category: 'Science'
 },
-    {
-        alt: 'banner2',
-        imagePath: '/images/banner2.jpg',
-        title: 'IX',
-        category: 'Science'
-    },
-    {
-        alt: 'banner3',
-        imagePath: '/images/banner3.jpg',
-        title: 'IX',
-        category: 'Science'
+{
+  alt: 'banner2',
+  imagePath: '/images/banner2.jpg',
+  title: 'IX',
+  category: 'Science'
+},
+{
+  alt: 'banner3',
+  imagePath: '/images/banner3.jpg',
+  title: 'IX',
+  category: 'Science'
 
-    }, {
-        alt: 'banner4',
-        imagePath: '/images/banner4.jpg',
-        title: 'IX',
-        category: 'Science'
+}, {
+  alt: 'banner4',
+  imagePath: '/images/banner4.jpg',
+  title: 'IX',
+  category: 'Science'
 
-    }, {
-        alt: 'banner5',
-        imagePath: '/images/banner4.jpg',
-        title: 'IX',
-        category: 'Science'
-    },]
+}, {
+  alt: 'banner5',
+  imagePath: '/images/banner4.jpg',
+  title: 'IX',
+  category: 'Science'
+}]
 
-export async function getStaticProps() {
-
-    const allPostsData = getSortedPostsData()
-    return {
-        props: {
-            allPostsData
-        }
+export async function getStaticProps () {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
     }
+  }
 }
 
-export default function Home({allPostsData}) {
-    const [ind, setInd] = useState(0);
-    const [flipped, setFlipped] = useState(false)
-    useEffect(() => {
-        setTimeout(() => {
-            setFlipped(true)
-        }, 9500)
-        setTimeout(() => {
-            setInd(ind === images.length - 1 ? 0 : ind + 1)
-        }, 10000)
-        setTimeout(() => {
-            setFlipped(false)
-        }, 10500)
-    }, [ind])
-    return (
-        <Layout home>
+export default function Home () {
+  const [ind, setInd] = useState(0)
+  const [flipped, setFlipped] = useState(false)
+  useEffect(() => {
+    setTimeout(() => {
+      setFlipped(true)
+    }, 9500)
+    setTimeout(() => {
+      setInd(ind === images.length - 1 ? 0 : ind + 1)
+    }, 10000)
+    setTimeout(() => {
+      setFlipped(false)
+    }, 10500)
+  }, [ind])
+  return (
+        <Layout>
             <Head>
-                <title>{siteTitle}</title>
+                <title>{'Learnizo | Home'}</title>
             </Head>
             <section>
                 <div
@@ -78,14 +78,20 @@ export default function Home({allPostsData}) {
             </section>
             <section>
                 <br/>
-                    <TestimonialCard/>
+                <Testimonials/>
             </section>
             <br/>
             <div>
                 <div className={'flex flex-row justify-center items-center'}>
-                    <text className={`text-3xl subpixel-antialiased font-semibold`}>
-                        Locate Us
+                    <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
+                        Locate
                     </text>
+                    <text className={'mx-2 text-3xl subpixel-antialiased font-normal text-gray-500'}>
+                        {'Us'}
+                    </text>
+                    {/* <text className={'text-3xl subpixel-antialiased font-semibold'}> */}
+                    {/*    Locate Us */}
+                    {/* </text> */}
                 </div>
                 <iframe
                     title='Way to Learnizo Coaching Institute,Amroha'
@@ -101,5 +107,5 @@ export default function Home({allPostsData}) {
             <br/>
             <ContactUsInner/>
         </Layout>
-    )
+  )
 }

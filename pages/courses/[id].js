@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Layout from "../../components/layout";
-import styles from "../../components/layout.module.css";
-import {AllKeys} from "../../constants/coursesKey";
-import {CourseDescription} from "../../constants/coursesDetails";
+import Head from 'next/head'
+import Layout from '../../components/layout'
+import styles from '../../components/layout.module.css'
+import { AllKeys } from '../../constants/coursesKey'
+import { CourseDescription } from '../../constants/coursesDetails'
+import PropTypes from 'prop-types'
 
-
-export async function getStaticPaths() {
-    return {
-        paths:AllKeys.map(key=>({
-            params: {
-                id: key,
-            }
-        })) ,
-        fallback: false
-    }
+export async function getStaticPaths () {
+  return {
+    paths: AllKeys.map(key => ({
+      params: {
+        id: key
+      }
+    })),
+    fallback: false
+  }
 }
 
-
-export async function getStaticProps({ params }) {
-    // Fetch necessary data for the blog post using params.id
-    console.log("Params" ,params)
-    return {
-        props: {
-            params
-        }
+export async function getStaticProps ({ params }) {
+  return {
+    props: {
+      params
     }
+  }
 }
-const getTitle=(str)=>{
-    const arr = str.split('-');
-    if(arr.length > 3){
-        arr[0] = arr[0][0].toUpperCase() + arr[0].slice(1)
-        arr[1] = arr[1][0].toUpperCase() + arr[1].slice(1)
-        return{
-            class:arr[2],
-            subject:arr[0]+' '+arr[1]
-        }
-    }
+const getTitle = (str) => {
+  const arr = str.split('-')
+  if (arr.length > 3) {
     arr[0] = arr[0][0].toUpperCase() + arr[0].slice(1)
+    arr[1] = arr[1][0].toUpperCase() + arr[1].slice(1)
     return {
-        class:arr[1],
-        subject:arr[0],
+      class: arr[2],
+      subject: arr[0] + ' ' + arr[1]
     }
+  }
+  arr[0] = arr[0][0].toUpperCase() + arr[0].slice(1)
+  return {
+    class: arr[1],
+    subject: arr[0]
+  }
 }
-const Courses=({params})=>{
-    const info = getTitle(params.id);
-    return (
+
+const Courses = ({ params }) => {
+  const info = getTitle(params.id)
+  return (
         <Layout>
             <Head>
                 <title>{`Learnizo | ${info.subject} Class ${info.class}`}</title>
@@ -55,13 +53,13 @@ const Courses=({params})=>{
                     <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
                         {info.subject} {' '}
                     </text>
-                    {/*<br/>*/}
-                    <text className={`text-3xl subpixel-antialiased font-normal text-gray-500`}>
+                    {/* <br/> */}
+                    <text className={'text-3xl subpixel-antialiased font-normal text-gray-500'}>
                         Class {info.class}
                     </text>
                     <br/>
                     <br/>
-                    <text className={`text-gray-700 font-light`}>
+                    <text className={'text-gray-700 font-light'}>
                         {CourseDescription[params.id].description}
                     </text>
                     <br/>
@@ -69,12 +67,12 @@ const Courses=({params})=>{
                     <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
                         Why? {' '}
                     </text>
-                    <text className={`text-3xl subpixel-antialiased font-normal text-gray-500`}>
+                    <text className={'text-3xl subpixel-antialiased font-normal text-gray-500'}>
                         Learnizo for {info.class} {info.subject}
                     </text>
                     <br/>
                     <br/>
-                    <text className={`text-gray-700 font-light`}>
+                    <text className={'text-gray-700 font-light'}>
                         {CourseDescription[params.id].whyLearnizo}
                     </text>
                 </div>
@@ -87,7 +85,11 @@ const Courses=({params})=>{
                 </div>
             </div>
         </Layout>
-    )
+  )
+}
+
+Courses.propTypes = {
+  params: PropTypes.objectOf(PropTypes.string)
 }
 
 export default Courses
