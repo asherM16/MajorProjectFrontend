@@ -95,3 +95,19 @@ img {
   margin-left: 100px;
   font-size: medium;
 }
+
+.about-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 170px;
+  margin-right: 170px;
+}
+.about-title{
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(to right, #0099cc 8%, #00ffff 100%);   */
+}
