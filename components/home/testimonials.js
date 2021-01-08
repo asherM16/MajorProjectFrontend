@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-import Head from 'next/head'
 import { TestimonialCard } from '../testimonialCard'
 import styles from '../layout.module.css'
 import Slider from 'react-slick'
@@ -67,20 +65,4 @@ export const Testimonials = () => {
             <br/>
         </div>
   )
-=======
-import Layout from "../layout";
-import Head from "next/head";
-
-export const Testimonials = () =>{
-    return(
-        <Layout>
-            <Head>
-                <title>Learnizo | Testimonials</title>
-            </Head>
-            <text className={`text-3xl subpixel-antialiased font-semibold`}>
-                Testimonials
-            </text>
-        </Layout>
-    )
->>>>>>> khalid
 }

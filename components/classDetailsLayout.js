@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Layout from './layout'
 import { SubjectCard } from './subjectCard'
-import style from './layout.module.css'
 import { CourseDetails } from '../constants/coursesDetails'
 import { ContactUsInner } from './contactUsInner'
 import PropTypes from 'prop-types'
@@ -35,7 +34,7 @@ export const ClassDetailsLayout = ({ ind, classTitle, classDetails }) => {
                     </div>
                 </div>
             </div>
-            <div className={` py-2 my-4 flex flex-row flex-wrap justify-center ${style.learnGray}`}>
+            <div className={` py-2 my-4 flex flex-row flex-wrap justify-center ${styles.learnGray}`}>
                 {CourseDetails[ind].coursesList.map((Item) => <SubjectCard
                     bg={Item.bg}
                     link={Item.link}
