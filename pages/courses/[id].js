@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/layout'
 import styles from '../../components/layout.module.css'
 import { AllKeys } from '../../constants/coursesKey'
@@ -78,9 +79,11 @@ const Courses = ({ params }) => {
                 </div>
                 <div className={'flex flex-col items-center'}>
                     <br/>
-                    <button className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
-                        Register For Demo Class
-                    </button>
+                    <Link href={'/register'} key={'register'}>
+                        <button className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
+                            Register For Demo Class
+                        </button>
+                    </Link>
                     <img src="/svgs/teaching.svg" alt={'teaching'} className={'p-4'}/>
                 </div>
             </div>
