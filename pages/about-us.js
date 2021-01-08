@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Layout from '../components/layout';
-import { Button, Card } from 'antd';
+
 
 
 
@@ -54,19 +54,7 @@ export default function AboutUs() {
             <h2 className="about-h2">Invest in Learning Better</h2>
             <div className="about-card">
 
-                <Card title={<p className="about-title"> Curriculum Coverage</p>} style={{ width: 300, borderRadius: 10, }}>
-
-                    <p>We have analyzed curriculum coverage pattern of top schools of Delhi NCR and aligned our curriculum coverage of all classes and subjects as per theirs.</p>
-                </Card>
-
-                <Card title={<h2 className="about-title">Build Concepts </h2>} style={{ width: 300, borderRadius: 10,  }}>
-                    <p>Content for each class and subject is designed by 180+ faculty. Individual attention in group environment helps students understand their stregths and areas of improvements.</p>
-                </Card>
-
-                <Card title={<h2 className="about-title">Performance Improvement </h2>} style={{ width: 300, borderRadius: 10,  }}>
-                    
-                    <p>Structured & scheduled progressive tests are conducted to keep regular track of students' learning and understanding of concepts.</p>
-                </Card>
+              
             </div>
             <h2 className="about-h2"> Prepare Yourself For a Better Tommorrow... </h2>
 

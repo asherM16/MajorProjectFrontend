@@ -4,7 +4,6 @@ import Layout, {siteTitle} from '../components/layout'
 import {getSortedPostsData} from '../lib/posts'
 import CoursesOffered from "../components/home/CoursesOffered";
 import {ContactUsInner} from "../components/contactUsInner";
-import { Card } from 'antd';
 const images = [{
     alt: 'banner1',
     imagePath: '/images/banner1.jpg',
