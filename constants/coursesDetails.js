@@ -202,6 +202,7 @@ export const CourseDetails = [
         link: '/class-VI/',
     },
 ]
+<<<<<<< HEAD
 export const CourseDescription = {
     'maths-10th-class': {
         description:'It has to be noted that there is a quantum jump in the level of difficulty of subjects for students in class XI as compared to Class IX/X. Often, students find it challenging to cope up with huge class XI syllabi, on top of it the entrance exam preparation makes the job much more daunting. Therefore, examinations such as JEE main, JEE Advanced, BITSAT, VITEE, NEET, AIIMS, and state exams need adequate preparation, ideally from an early age. The early a student prepares, the better will be the performance.',
@@ -284,3 +285,5 @@ export const CourseDescription = {
         whyLearnizo:'It has to be noted that there is a quantum jump in the level of difficulty of subjects for students in class XI as compared to Class IX/X. Often, students find it challenging to cope up with huge class XI syllabi, on top of it the entrance exam preparation makes the job much more daunting. Therefore, examinations such as JEE main, JEE Advanced, BITSAT, VITEE, NEET, AIIMS, and state exams need adequate preparation, ideally from an early age. The early a student prepares, the better will be the performance.'
     },
 }
+=======
+>>>>>>> khalid

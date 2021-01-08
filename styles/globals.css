@@ -19,6 +19,7 @@ html,body {
   font-size: 18px;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -77,4 +78,45 @@ img {
   height:50px;
   border-radius: 25px;
   margin: 5px;
+}
+/*.card-classes-container{*/
+/*  */
+/*}*/
+
+
+.about-h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  padding: 20px;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+.about-text{
+  display: flex;
+  flex-direction: row;
+
+}
+.about-p {
+  padding: 50px;
+  margin-left: 100px;
+  font-size: medium;
+}
+
+.about-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 170px;
+  margin-right: 170px;
+}
+.about-title{
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(to right, #0099cc 8%, #00ffff 100%);   */
 }
