@@ -3,18 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@react-spring/parallax": "^9.0.0-rc.3",
     "autoprefixer": "^10.0.4",
+    "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
+    "express": "^4.17.1",
     "gray-matter": "^4.0.2",
     "next": "^10.0.3",
     "next-pwa": "^5.0.2",
+    "nodemailer": "^6.4.17",
     "postcss": "^8.1.10",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",

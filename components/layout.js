@@ -82,14 +82,14 @@ export default function Layout ({ children }) {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className={'animate flex lg:hidden xl:hidden 2xl:hidden' +
+                                    <div className={'z-50 animate flex lg:hidden xl:hidden 2xl:hidden' +
                                     ' justify-center items-end flex-col'}>
                                         <div onClick={() => {
                                           setMenuVisible(!menuVisible)
                                         }} className={'mx-2'}>
                                             <Ionicons name={'ios-menu'} size={25}/>
                                         </div>
-                                        <div className={`${menuVisible ? '' : 'hidden'}`}>
+                                        <div className={`z-50 ${menuVisible ? '' : 'hidden'}`}>
                                             {headerLinks.map(({ link, title }) => (
                                                 <div className={`m-2 flex flex-col items-end 
                                                 justify-center`}
@@ -109,8 +109,9 @@ export default function Layout ({ children }) {
                         </div>
                     </ParallaxLayer>
                 </header>
+                <div className={`${styles.upperSpace} ${menuVisible ? '' : 'hidden'}`}/>
                 <div className={`${styles.upperSpace}`}/>
-                <main className={`${styles.childContainer}`}>
+                <main className={`z-30 ${styles.childContainer}`}>
                     {children}
                 </main>
                 <br/>
