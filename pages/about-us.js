@@ -1,24 +1,32 @@
-import Link from "next/link";
-import Head from "next/head";
-import Layout from '../components/layout';
 
+import Head from 'next/head'
+import Layout from '../components/layout'
+import styles from '../components/layout.module.css'
+import PropTypes from 'prop-types'
 
+const Headings = ({ first, second }) => {
+  return (<div className={'flex flex-row justify-center items-center'}>
+        <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
+            {first}
+        </text>
+        <text className={'mx-2 text-3xl subpixel-antialiased font-normal text-gray-500'}>
+            {second}
+        </text>
+    </div>)
+}
 
-
-export default function AboutUs() {
-    return (
+export default function AboutUs () {
+  return (
         <Layout>
             <Head>
                 <title>About Us</title>
             </Head>
             <div >
-                <h2 className="about-h2">
-                    Learn-IZO - Helps Excel in Boards
-                 </h2>
+
+                <Headings first={'Learn-IZO -'} second={'Helps Excel in Boards'}/>
             </div>
             <div className="about-text">
                 <p className="about-p">
-
 
                     We focus on academic excellence through emphasis on building concepts, school curriculum alignment and preparation to score more in school exams and boards. More than 25000 students have been benefitted so far with record breaking CBSE Board results year on year.
 
@@ -31,9 +39,9 @@ export default function AboutUs() {
                 </div>
 
             </div>
-            <h2 className="about-h2">Our Values</h2>
-            <p className="about-p">
 
+            <Headings first={'Our '} second={'Values '}/>
+            <p className="about-p">
 
                 LearnIZO – A rich heritage to live up to! Organization values are the foundation stones on which the organization’s image is built. These help the company realize its organizational goals and in turn transform lives. These values are intended to infuse an infectious energy, professionalism and a sense of true empowerment to the workplace.
 
@@ -42,21 +50,21 @@ export default function AboutUs() {
                 Our values drive us towards our goals of expansion, diversification and excellence. These values define our philosophy of operations, guide our important decisions and determine our commitment and achievement.
 
             </p>
-            <h2 className="about-h2" >Our Vision</h2>
+
+            <Headings first={'Our'} second={'Vision'}/>
             <p className="about-p">To become a leading centre for support and facilitate the transformation of students into good human beings and competent professionals.</p>
 
-            <h2 className="about-h2"> Our Mission</h2>
+            <Headings first={'Our'} second={'Mission '}/>
             <p className="about-p">
                 To provide a platform towards the right career and building visionaries and leaders for the nation. To increase the visibility of academic programs globally and attract corporate at all levels.
 
             </p>
 
-            <h2 className="about-h2">Invest in Learning Better</h2>
-            <div className="about-card">
-
-
-            </div>
-            <h2 className="about-h2"> Prepare Yourself For a Better Tommorrow... </h2>
+            <Headings first={'Prepare Yourself'} second={'For a Better Tomorrow '}/>
 
         </Layout>)
+}
+Headings.propTypes = {
+  first: PropTypes.string,
+  second: PropTypes.string
 }

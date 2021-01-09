@@ -46,6 +46,7 @@ export const ClassDetailsLayout = ({ ind, classTitle, classDetails }) => {
         </Layout>
   )
 }
+
 ClassDetailsLayout.propTypes = {
   ind: PropTypes.string,
   classTitle: PropTypes.string,

@@ -4,7 +4,7 @@ import styles from '../layout.module.css'
 
 export const CoursesOffered = () => {
   return (
-        <div className={'flex flex-col items-center'}>
+      <div className={'flex flex-col items-center'}>
             <div className={'flex flex-row justify-center items-center'}>
                 <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
                     Courses

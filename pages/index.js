@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import CoursesOffered from '../components/home/CoursesOffered'
 import { ContactUsInner } from '../components/contactUsInner'
 import { Testimonials } from '../components/home/testimonials'
 import styles from '../components/layout.module.css'
+import Slider from 'react-slick'
 
 const images = [{
   alt: 'banner1',
@@ -48,34 +49,61 @@ export async function getStaticProps () {
 }
 
 export default function Home () {
-  const [ind, setInd] = useState(0)
-  const [flipped, setFlipped] = useState(false)
-  useEffect(() => {
-    setTimeout(() => {
-      setFlipped(true)
-    }, 9500)
-    setTimeout(() => {
-      setInd(ind === images.length - 1 ? 0 : ind + 1)
-    }, 10000)
-    setTimeout(() => {
-      setFlipped(false)
-    }, 10500)
-  }, [ind])
+  const [name, setName] = useState(false)
+  const settings = {
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+
+  }
   return (
         <Layout>
             <Head>
                 <title>{'Learnizo | Home'}</title>
             </Head>
-            <section>
-                <div
-                    className={`${flipped ? 'opacity-80 transition duration-500 ease-in-out transform scale-95 shadow' : 'shadow-lg transition duration-500 ease-in-out transform scale-100 opacity-100'}`}>
-                    <img src={images[ind].imagePath} alt={images[ind].alt} className={'home-img'}/>
-                </div>
+            <section className={'z-0'}>
+            <Slider {...settings}>
+                {images.map((item) => (
+                    <img key={item.imagePath} src={item.imagePath} alt={item.alt} className={'home-img'}/>
+                ))}
+            </Slider>
             </section>
             <section>
                 <br/>
                 <CoursesOffered/>
             </section>
+            <form>
+                <label htmlFor="fname">First name:</label><br/>
+                <input type="text" id="fname" value={name} onChange={(e) => { setName(e.target.value) }}/><br/><br/>
+                <input type="submit" value="Submit"/>
+            </form>
             <section>
                 <br/>
                 <Testimonials/>
