@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Layout from '../components/layout'
 import styles from '../components/layout.module.css'
 import { Ionicons } from 'react-web-vector-icons'
+import Alert from '../components/alert'
 
 export const RegisterForm = () => {
   const [reqObj, setReqObj] = useState({ name: '', email: '', address: '', contact: '', courseClass: '' })
+  const [error, setError] = useState(null)
+  const [success, setSuccess] = useState(null)
   const changeValue = (key, value) => {
     setReqObj({ ...reqObj, [key]: value })
   }
+  useEffect(() => {
+    setTimeout(() => { setError(null); setSuccess(null) }, 10000)
+  }, [success, error])
   return (
         <Layout>
             <br/>
@@ -20,9 +26,13 @@ export const RegisterForm = () => {
                 </text>
             </div>
             <br/>
-            <div className={'grid grid-cols-2 gap-4'}>
-                <div className={'col-span-1'}>Ggg</div>
-                <div className={'col-span-1 shadow p-2 m-2'}>
+            <div className={'grid lg:grid-cols-2 grid-cols-1 gap-4'}>
+                <div className={'col-span-1 p-4'}>
+                    <img src="/svgs/classroom.svg" alt={'teaching'} className={'p-4'}/>
+                </div>
+                <div className={'col-span-1 p-4 m-2'}>
+                    <br/>
+                    <br/>
                     <form className="relative" onClick={(e) => { e.preventDefault() }}>
                         <div className={'flex flex-row items-center'}>
                             <div className={'py-2'}>
@@ -88,13 +98,19 @@ export const RegisterForm = () => {
                             },
                             body: JSON.stringify(reqObj)
                           }).then((res) => {
-                            console.log(res)
+                            setSuccess(true)
+                          }).catch(() => {
+                            setError(true)
                           })
                         }} className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
                             Register For Demo Class
                         </button>
-                      </div>
+                         </div>
                     </form>
+                    <div className={'w-100 flex flex-row items-center justify-center'}>
+                        {error ? <Alert type={'error'}>Request Fail</Alert> : null}
+                        {success ? <Alert type={'success'}>Mail Sent Successfully</Alert> : null}
+                    </div>
                 </div>
             </div>
         </Layout>

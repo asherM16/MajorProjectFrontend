@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
 import CoursesOffered from '../components/home/CoursesOffered'
 import { ContactUsInner } from '../components/contactUsInner'
 import { Testimonials } from '../components/home/testimonials'
@@ -28,7 +27,7 @@ const images = [{
 
 }, {
   alt: 'banner4',
-  imagePath: '/images/banner4.jpg',
+  imagePath: '/images/banner5.jpg',
   title: 'IX',
   category: 'Science'
 
@@ -38,15 +37,6 @@ const images = [{
   title: 'IX',
   category: 'Science'
 }]
-
-export async function getStaticProps () {
-  const allPostsData = getSortedPostsData()
-  return {
-    props: {
-      allPostsData
-    }
-  }
-}
 
 export default function Home () {
   const [name, setName] = useState(false)

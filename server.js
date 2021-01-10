@@ -17,7 +17,7 @@ app.prepare().then(() => {
     const { email = '', name = '', courseClass = '', address = '', contact = '' } = req.body
     const text = `Name : ${name} Class : ${courseClass} Contact Number : ${contact} Email : ${email} Address : ${address}`
     const subject = `Request for demo ${courseClass}  from ${name}`
-    mailer(text, subject, 'ashertoufeeq@gmail.com').then(() => {
+    mailer(text, subject, 'saleemkhan92676@gmail.com').then(() => {
       console.log('success')
       res.send('success')
     }).catch((error) => {
@@ -29,7 +29,7 @@ app.prepare().then(() => {
     const { contact = '' } = req.body
     const text = `Contact Number : ${contact}`
     const subject = 'Request for Callback'
-    mailer(text, subject, 'ashertoufeeq@gmail.com').then(() => {
+    mailer(text, subject, 'saleemkhan92676@gmail.com').then(() => {
       console.log('success')
       res.send('success')
     }).catch((error) => {

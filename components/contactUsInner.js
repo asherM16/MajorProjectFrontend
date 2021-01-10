@@ -1,9 +1,13 @@
 import { Ionicons } from 'react-web-vector-icons'
 import styles from './layout.module.css'
 import { useState } from 'react'
+import Alert from './alert'
 
 export const ContactUsInner = () => {
   const [contact, setContact] = useState('')
+  const [error, setError] = useState(null)
+  const [success, setSuccess] = useState(null)
+
   return (
         <div className={'grid md:grid-cols-2 grid-cols-1 gap-4'}>
             <div className={'flex flex-col justify-start items-start p-2 px-4'}>
@@ -83,12 +87,18 @@ export const ContactUsInner = () => {
                         },
                         body: JSON.stringify({ contact })
                       }).then((res) => {
-                        console.log(res)
+                        setSuccess(true)
+                      }).catch(() => {
+                        setError(true)
                       })
                     }}
                     className={`${styles.learnBlue} text-white p-1 px-2 m-2 rounded transition duration-500 ease-in-out transform hover:scale-105 shadow`}>
                     Get a Call Back
                 </button>
+                <div className={'w-100 flex flex-row items-center justify-center'}>
+                    {error ? <Alert type={'error'}>Request Fail</Alert> : null}
+                    {success ? <Alert type={'success'}>Request Sent Successfully! <br/>You will receive a call form us</Alert> : null}
+                </div>
             </div>
         </div>
   )
