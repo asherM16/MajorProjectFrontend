@@ -1,6 +1,7 @@
 import { TestimonialCard } from '../testimonialCard'
 import styles from '../layout.module.css'
 import Slider from 'react-slick'
+import { TestimonialDetails } from '../../constants/testimonialDetails'
 
 export const Testimonials = () => {
   const settings = {
@@ -49,18 +50,11 @@ export const Testimonials = () => {
                 </text>
             </div>
                 <Slider {...settings}>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
-                    <TestimonialCard/>
+                    {
+                        TestimonialDetails.map((Item) => (
+                            <TestimonialCard {...Item} key={Item.image}/>
+                        ))
+                    }
                 </Slider>
             <br/>
         </div>
