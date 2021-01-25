@@ -74,7 +74,11 @@ const Courses = ({ params }) => {
                     <br/>
                     <br/>
                     <text className={'text-gray-700 font-light'}>
-                        {CourseDescription[params.id].whyLearnizo}
+                        Learnizo is Amroha&apos;s first coaching institution which provide subject wise teachers for
+                        students in Class 6th till 10th. For 6th to 8th grade students, we run a very powerful
+                        Foundation program, with the objective of laying a strong Science & Maths foundation
+                        for higher classes. For students in Class 9th and 10,
+                        we offer our highly acclaimed Comprehensive programme to prepare students for boards and competetive exams.
                     </text>
                 </div>
                 <div className={'flex flex-col items-center'}>
