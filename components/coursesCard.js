@@ -33,6 +33,6 @@ export const CoursesCard = ({ title, description, coursesList, link }) => {
 CoursesCard.propTypes = {
   title: TypeProps.string,
   description: TypeProps.string,
-  coursesList: TypeProps.string,
+  coursesList: TypeProps.array,
   link: TypeProps.string
 }

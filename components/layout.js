@@ -16,10 +16,28 @@ export default function Layout ({ children }) {
         <div className={styles.container}>
             <Parallax scrolling={true}>
                 <Head>
-                    <meta
-                        name="description"
-                        content="Learn how to build a personal website using Next.js"
-                    />
+                        <meta charSet="utf-8"/>
+                        <link rel="shortcut icon" href="new.ico"/>
+                        <meta name="viewport"
+                          content="width=device-width, initial-scale=1"/>
+                        <meta name="robots" content="index, follow"/>
+                        <meta name="theme-color" content="#000000"/>
+                        <meta name="" content="Learnizo | An Education Point for you."/>
+                        <meta name="description"
+                              content="A coaching center for students of class 6th to class 10th."/>
+                        <meta property="og:type" content="website"/>
+                        <meta property="og:url" content="https://learnizo-class.com/"/>
+                        <meta property="og:title" content="Learnizo | An Education Point for you."/>
+                        <meta property="og:description"
+                              content="A coaching center for students of class 6th to class 10th."/>
+                        <meta property="twitter:card" content="summary_large_image"/>
+                        <meta property="twitter:url" content="https://learnizo-class.com/"/>
+                        <meta property="twitter:title" content="Learnizo | An Education Point for you."/>
+                        <meta property="twitter:description"
+                              content="A coaching center for students of class 6th to class 10th."/>
+                        <link rel="apple-touch-icon" href="new.ico"/>
+                        <link rel="manifest" href="manifest.json"/>
+                    <meta name="google-site-verification" content="9W7bgdpxM2mCUvG1wJFGGD4CAmkM6J1-lLOn1Q3iNEc"/>
                     <meta
                         property="og:image"
                         content={`https://og-image.now.sh/${encodeURI(
@@ -28,7 +46,7 @@ export default function Layout ({ children }) {
                     />
                     <meta name="og:title" content={siteTitle}/>
                     <link rel="icon" href="new.ico"/>
-                    <meta name="twitter:card" content="summary_large_image"/>
+                    <meta name="twitter:card" content="summary_large_image" />
                     <title>Learnizo Coaching Institute</title>
                 </Head>
                 <header>
