@@ -62,7 +62,7 @@ export const ContactUsInner = () => {
                     <ul className={''}>
                         <li>
                             <a href='https://www.jmi.ac.in/electrical/faculty-members/Dr_Shakeb_Ahmad_Khan-2968' tager={'__blank'}>
-                                <text className={`${styles.colorLearnBlue} text-3xl subpixel-antialiased font-semibold`}>{'  '}Dr. Shakeb Ahmad Khan Professor</text>
+                                <text className={`${styles.colorLearnBlue} text-3xl subpixel-antialiased font-semibold`}>{'  '}Dr. Shakeb Ahmad Khan</text>
                             </a>
                             </li>
                         </ul>
