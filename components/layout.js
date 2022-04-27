@@ -22,19 +22,19 @@ export default function Layout ({ children }) {
                           content="width=device-width, initial-scale=1"/>
                         <meta name="robots" content="index, follow"/>
                         <meta name="theme-color" content="#000000"/>
-                        <meta name="" content="Learnizo | An Education Point for you."/>
+                        <meta name="" content="Major Project | Jamia Millia Islamia"/>
                         <meta name="description"
-                              content="A coaching center for students of class 6th to class 10th."/>
+                              content="The system utilizes only video or image input - video analytics - a very powerful tool.
+                              "/>
                         <meta property="og:type" content="website"/>
-                        <meta property="og:url" content="https://learnizo-class.com/"/>
-                        <meta property="og:title" content="Learnizo | An Education Point for you."/>
+                        <meta property="og:title" content="Major Project | Jamia Millia Islamia"/>
                         <meta property="og:description"
                               content="A coaching center for students of class 6th to class 10th."/>
                         <meta property="twitter:card" content="summary_large_image"/>
-                        <meta property="twitter:url" content="https://learnizo-class.com/"/>
-                        <meta property="twitter:title" content="Learnizo | An Education Point for you."/>
+                        <meta property="twitter:title" content="Major Project | Jamia Millia Islamia"/>
                         <meta property="twitter:description"
-                              content="A coaching center for students of class 6th to class 10th."/>
+                              content="The system utilizes only video or image input - video analytics - a very powerful tool.
+                              "/>
                         <link rel="apple-touch-icon" href="new.ico"/>
                         <link rel="manifest" href="manifest.json"/>
                     <meta name="google-site-verification" content="9W7bgdpxM2mCUvG1wJFGGD4CAmkM6J1-lLOn1Q3iNEc"/>
@@ -47,58 +47,32 @@ export default function Layout ({ children }) {
                     <meta name="og:title" content={siteTitle}/>
                     <link rel="icon" href="new.ico"/>
                     <meta name="twitter:card" content="summary_large_image" />
-                    <title>Learnizo Coaching Institute</title>
+                    <title>Major Project | Jamia Millia Islamia</title>
                 </Head>
                 <header>
                     <ParallaxLayer offset={0} speed={0.5}>
                         <div className={'shadow-md'}>
-                            <div
-                                className={`learn-gray flex flex-row items-center justify-around py-2 ${styles.learnBlue} ${styles.upperHeader}`}>
-                                <div
-                                    className={'text-white transition duration-500 ease-in-out transform hover:scale-110'}>
-                                    <Ionicons name={'ios-call'} color={'#fff'} size={20}/>
-                                    {' '}
-                                    +919267633372
-                                </div>
-                                <div>
-                                    {socialMediaDetails.map(Item => (
-                                        <a
-                                            key={Item.link}
-                                            rel="noreferrer"
-                                            href={Item.link}
-                                            target={'_blank'}
-                                            className={'mx-2'}
-                                            style={{ textDecoration: 'none' }}
-                                        ><Ionicons
-                                            name={Item.icon}
-                                            color={Item.color}
-                                            size={Item.size}
-                                            key={Item.icon}
-                                        />
-                                        </a>))}
-                                </div>
-                            </div>
                             <div
                                 className={`${styles.learnGray} flex flex-row justify-between items-start lg:items-center xl:items-center 2xl:items-center p-1`}>
                                 <Link href={'/'}>
                                     <img
                                     src="/images/learnizoLogo.png"
                                     className={`${styles.headerHomeImage} mx-3`}
-                                    alt={'Learnizo'}
+                                    alt={'Logo'}
                                     />
                                 </Link>
                                 <div className={'flex flex-row items-center justify-center'}>
                                     <div className={'hidden lg:flex flex-row items-center justify-center'}>
-                                        {headerLinks.map(({ link, title }) => (
-                                            <div className={'m-2 flex flex-row items-center'} key={link}>
-                                                <Link href={`${link}`}>
-                                                    <a className={`font-medium text-gray-700 
-                                                colorBlue transition duration-500 
-                                                ease-in-out transform 
-                                                hover:scale-110`}>{title}</a>
-                                                </Link>
-                                            </div>
-                                        ))}
+                                    <text className='mr-2 text-center font-medium font-semibold text-gray-700 '>
+                                        Faculty of Engineering And Technology <br/> Jamia Millia Islamia
+                                    </text>
+                                </div>
+                                </div>
+                                <div className={'flex flex-row items-center justify-center'}>
+                                    <div className={'hidden lg:flex flex-row items-center justify-center'}>
+                                    <text className='mr-2 font-medium font-semibold text-gray-700 '>
+                                        Major Project
+                                    </text>
                                     </div>
                                     <div className={'z-50 animate flex lg:hidden xl:hidden 2xl:hidden' +
                                     ' justify-center items-end flex-col'}>
@@ -140,8 +114,9 @@ export default function Layout ({ children }) {
                             className={`${styles.headerHomeImage} mx-3`}
                             alt={'Leanizo'}
                         />
+                        <br/>
                         <text>
-                            © 2020 Learnizo Coaching Institute, Amroha
+                            © 2022 MJ09, Electrical
                         </text>
                     </div>
                 </div>

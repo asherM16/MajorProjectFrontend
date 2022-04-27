@@ -6,7 +6,7 @@ export default function ContactUs () {
   return (
         <Layout>
             <Head>
-                <title>Learnizo | Contact Us</title>
+                <title>Major Project | Jamia Millia Islamia</title>
             </Head>
             <br/>
            <ContactUsInner/>

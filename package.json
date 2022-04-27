@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-spring/parallax": "^9.0.0-rc.3",
     "autoprefixer": "^10.0.4",
+    "axios": "^0.27.1",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
     "express": "^4.17.1",

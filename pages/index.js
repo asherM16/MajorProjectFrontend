@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../components/layout'
-import CoursesOffered from '../components/home/CoursesOffered'
 import { ContactUsInner } from '../components/contactUsInner'
-import { Testimonials } from '../components/home/testimonials'
-import styles from '../components/layout.module.css'
+import { SocialDistancingMain } from '../components/socialDistancingMain/index'
 import Slider from 'react-slick'
 
 const images = [{
@@ -15,31 +12,30 @@ const images = [{
 },
 {
   alt: 'banner2',
-  imagePath: '/images/banner2.jpg',
+  imagePath: '/images/banner1.jpg',
   title: 'IX',
   category: 'Science'
 },
 {
   alt: 'banner3',
-  imagePath: '/images/banner3.jpg',
+  imagePath: '/images/banner1.jpg',
   title: 'IX',
   category: 'Science'
 
 }, {
   alt: 'banner4',
-  imagePath: '/images/banner5.jpg',
+  imagePath: '/images/banner1.jpg',
   title: 'IX',
   category: 'Science'
 
 }, {
   alt: 'banner5',
-  imagePath: '/images/banner4.jpg',
+  imagePath: '/images/banner1.jpg',
   title: 'IX',
   category: 'Science'
 }]
 
 export default function Home () {
-  const [name, setName] = useState(false)
   const settings = {
     infinite: true,
     speed: 2000,
@@ -76,7 +72,7 @@ export default function Home () {
   return (
         <Layout>
             <Head>
-                <title>{'Learnizo | Home'}</title>
+                <title>{'Major Project | Jamia Millia Islamia'}</title>
             </Head>
             <section className={'z-0'}>
             <Slider {...settings}>
@@ -85,38 +81,8 @@ export default function Home () {
                 ))}
             </Slider>
             </section>
-            <section>
-                <br/>
-                <CoursesOffered/>
-            </section>
-            <section>
-                <br/>
-                <Testimonials/>
-            </section>
             <br/>
-            <div>
-                <div className={'flex flex-row justify-center items-center'}>
-                    <text className={`text-3xl subpixel-antialiased font-semibold ${styles.colorLearnBlue}`}>
-                        Locate
-                    </text>
-                    <text className={'mx-2 text-3xl subpixel-antialiased font-normal text-gray-500'}>
-                        {'Us'}
-                    </text>
-                    {/* <text className={'text-3xl subpixel-antialiased font-semibold'}> */}
-                    {/*    Locate Us */}
-                    {/* </text> */}
-                </div>
-                <iframe
-                    title='Way to Learnizo Coaching Institute,Amroha'
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d434.77666986880297!2d78.46335244985433!3d28.898194086514106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbdc5f6299457452a!2sLearnizo%20Coaching%20Institute!5e0!3m2!1sen!2sin!4v1608494799327!5m2!1sen!2sin"
-                    id='gmap_canvas'
-                    className='google-map'
-                    frameBorder='0'
-                    scrolling='no'
-                    marginHeight={0}
-                    marginWidth={0}
-                />
-            </div>
+                <SocialDistancingMain/>
             <br/>
             <ContactUsInner/>
         </Layout>
