@@ -37,6 +37,11 @@ app.prepare().then(() => {
       res.send('bad')
     })
   })
+
+  server.get('/api/get-video', (req, res) => {
+    res.send({ data: 'https://res.cloudinary.com/teleopdassets/video/upload/v1651045194/SocialDistancingMeasurement/filename_v2n4rd.avi' })
+  })
+
   server.get('*', (req, res) => {
     return handle(req, res)
   })
