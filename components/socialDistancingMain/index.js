@@ -42,10 +42,15 @@ export const SocialDistancingMain = () => {
             </div>}
             {
                 url && 
-                    <video width="520" height="520" controls>
+                <>
+                <video width="520" height="520" controls>
                     <source src="https://res.cloudinary.com/teleopdassets/video/upload/v1651045194/SocialDistancingMeasurement/filename_v2n4rd.avi" type="video/mp4"/>
                   Your browser does not support the video tag.
                   </video>
+                  <a href='https://res.cloudinary.com/teleopdassets/video/upload/v1651045194/SocialDistancingMeasurement/filename_v2n4rd.avi' target={'_blank'}>
+                Open in New Tab
+                 </a>
+                  </>
             }
         </div>
   )
